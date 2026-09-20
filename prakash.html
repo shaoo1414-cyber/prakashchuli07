@@ -1,0 +1,1030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Our Love Story ❤️</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#090009;
+    color:white;
+    font-family:Georgia,serif;
+    overflow-x:hidden;
+}
+
+/* LOADING */
+
+#loading{
+    position:fixed;
+    inset:0;
+    background:#12000d;
+    z-index:9999;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+}
+
+.loader-heart{
+    font-size:80px;
+    animation:beat 1s infinite;
+}
+
+#loading p{
+    color:#ffb6d2;
+    margin-top:20px;
+}
+
+/* STARS */
+
+.stars{
+    position:fixed;
+    inset:0;
+    background-image:
+    radial-gradient(white 1px,transparent 1px);
+    background-size:55px 55px;
+    opacity:.25;
+    pointer-events:none;
+}
+
+/* NAVBAR */
+
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,0,8,.7);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+.logo{
+    font-size:25px;
+    color:#ff8fba;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+}
+
+nav a:hover{
+    color:#ff6fa8;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:100px 20px;
+    background:
+    radial-gradient(circle,#690039,#0b0009 70%);
+}
+
+.hero-content{
+    max-width:900px;
+}
+
+.big-heart{
+    font-size:110px;
+    animation:beat 1.2s infinite;
+}
+
+@keyframes beat{
+    50%{
+        transform:scale(1.25);
+    }
+}
+
+.hero h1{
+    font-size:70px;
+    color:#ffb1cf;
+    margin:25px 0;
+}
+
+.hero p{
+    font-size:23px;
+    line-height:1.8;
+    color:#ffe3ed;
+}
+
+.btn{
+    display:inline-block;
+    margin-top:35px;
+    padding:17px 35px;
+    border-radius:40px;
+    background:#ff287c;
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    box-shadow:0 0 25px #ff287c;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:scale(1.08);
+}
+
+/* SECTIONS */
+
+section{
+    position:relative;
+    padding:100px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:45px;
+    color:#ffabc9;
+    margin-bottom:20px;
+}
+
+.subtitle{
+    text-align:center;
+    color:#ffdce8;
+    font-size:19px;
+    margin-bottom:60px;
+}
+
+/* STORY */
+
+.story{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:22px;
+    line-height:2;
+    color:#ffe6ef;
+}
+
+/* GALLERY */
+
+.gallery{
+    max-width:1200px;
+    margin:auto;
+    columns:4 220px;
+    column-gap:20px;
+}
+
+.memory{
+    break-inside:avoid;
+    margin-bottom:20px;
+    position:relative;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0 0 20px rgba(255,50,130,.35);
+}
+
+.memory img{
+    width:100%;
+    display:block;
+    transition:.6s;
+}
+
+.memory:hover img{
+    transform:scale(1.08);
+}
+
+.memory-text{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    padding:25px 15px 15px;
+    background:linear-gradient(transparent,rgba(0,0,0,.9));
+}
+
+.memory-text h3{
+    color:#ff9fc5;
+    margin-bottom:5px;
+}
+
+.memory-text p{
+    font-size:14px;
+}
+
+/* QUOTES */
+
+.quotes{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.quote{
+    padding:35px 25px;
+    background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,150,190,.2);
+    border-radius:25px;
+    text-align:center;
+    transition:.4s;
+}
+
+.quote:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(255,50,130,.3);
+}
+
+.quote span{
+    font-size:45px;
+}
+
+.quote p{
+    margin-top:20px;
+    line-height:1.7;
+    color:#ffe2ec;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:850px;
+    margin:auto;
+    border-left:2px solid #ff5595;
+}
+
+.event{
+    margin:45px 0 45px 30px;
+    padding:25px;
+    background:rgba(255,255,255,.06);
+    border-radius:20px;
+}
+
+.event h3{
+    color:#ff9fc5;
+    font-size:25px;
+}
+
+.event p{
+    margin-top:12px;
+    line-height:1.7;
+    color:#ffe3ed;
+}
+
+/* LOVE LETTER */
+
+.letter{
+    max-width:800px;
+    margin:auto;
+    background:#fff5f8;
+    color:#3d1023;
+    padding:50px;
+    border-radius:8px;
+    box-shadow:0 15px 50px rgba(255,30,120,.3);
+    transform:rotate(-1deg);
+}
+
+.letter h2{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.letter p{
+    font-size:20px;
+    line-height:2;
+}
+
+/* FINAL */
+
+.final{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:
+    radial-gradient(circle,#870046,#100009 70%);
+}
+
+.final-content{
+    max-width:800px;
+}
+
+.final-heart{
+    font-size:120px;
+    animation:beat 1s infinite;
+}
+
+.final h1{
+    font-size:60px;
+    color:#ffb2d0;
+    margin:20px 0;
+}
+
+.final p{
+    font-size:22px;
+    line-height:1.8;
+    color:#ffe3ed;
+}
+
+#answer{
+    display:none;
+}
+
+/* FLOATING HEARTS */
+
+.floating-heart{
+    position:fixed;
+    bottom:-50px;
+    pointer-events:none;
+    animation:float 7s linear forwards;
+    z-index:999;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* MOBILE */
+
+@media(max-width:700px){
+
+    nav{
+        padding:15px;
+    }
+
+    nav a{
+        display:none;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero p{
+        font-size:18px;
+    }
+
+    .big-heart{
+        font-size:75px;
+    }
+
+    .title{
+        font-size:34px;
+    }
+
+    .quotes{
+        grid-template-columns:1fr;
+    }
+
+    .letter{
+        padding:25px;
+    }
+
+    .letter p{
+        font-size:17px;
+    }
+
+    .final h1{
+        font-size:42px;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- LOADING -->
+
+<div id="loading">
+    <div class="loader-heart">❤️</div>
+    <p>Preparing our memories...</p>
+</div>
+
+<div class="stars"></div>
+
+
+<!-- NAVIGATION -->
+
+<nav>
+
+<div class="logo">
+❤️ Our Story
+</div>
+
+<div>
+<a href="#home">Home</a>
+<a href="#story">Story</a>
+<a href="#memories">Memories</a>
+<a href="#quotes">Quotes</a>
+<a href="#letter">Letter</a>
+<a href="#proposal">Proposal</a>
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<div class="big-heart">❤️</div>
+
+<h1>Our Beautiful Story</h1>
+
+<p>
+There are thousands of stories in this world...
+<br>
+but this one is my favourite.
+<br><br>
+Because it has <b>YOU</b>. ❤️
+</p>
+
+<a href="#story" class="btn">
+Begin Our Journey ✨
+</a>
+
+</div>
+
+</section>
+
+
+<!-- STORY -->
+
+<section id="story">
+
+<h2 class="title">
+Our Story ❤️
+</h2>
+
+<p class="subtitle">
+One person. Many memories. One beautiful journey.
+</p>
+
+<div class="story">
+
+<p>
+Maybe we didn't know that the little moments
+would become some of our biggest memories.
+</p>
+
+<br>
+
+<p>
+Every smile, every conversation, every silly moment
+and every photograph slowly became a part of our story.
+</p>
+
+<br>
+
+<p>
+And if I could choose again,
+I would still choose the moments with you.
+❤️
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ALL PHOTOS -->
+
+<section id="memories">
+
+<h2 class="title">
+Our Memories 📸
+</h2>
+
+<p class="subtitle">
+Every picture holds a little piece of our story.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="memory">
+<img src="image/WhatsApp Video 2026-09-08 at 6.30.22 PM.mp4">
+<div class="memory-text">
+<h3>🌹 The Beginning</h3>
+<p>Where our beautiful memories started.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.07 PM (3).jpeg">
+<div class="memory-text">
+<h3>❤️ Your Smile</h3>
+<p>Your smile makes every moment special.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.11 PM (3).jpeg">
+<div class="memory-text">
+<h3>✨ Beautiful Day</h3>
+<p>A moment worth remembering forever.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Video 2026-09-08 at 6.30.22 PM.mp4">
+<div class="memory-text">
+<h3>🥰 Happy Us</h3>
+<p>Simple moments, unforgettable memories.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.11 PM.jpeg">
+<div class="memory-text">
+<h3>💕 Together</h3>
+<p>Everything feels better with you.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.12 PM.jpeg">
+<div class="memory-text">
+<h3>🌙 That Night</h3>
+<p>A memory I never want to forget.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.11 PM.jpeg">
+<div class="memory-text">
+<h3>💖 Special Moment</h3>
+<p>One picture, a thousand feelings.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.16 PM.jpeg">
+<div class="memory-text">
+<h3>🌸 Beautiful You</h3>
+<p>You make ordinary moments beautiful.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.11 PM (2).jpeg">
+<div class="memory-text">
+<h3>🥹 Precious</h3>
+<p>This memory will always be close to my heart.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.11 PM (1).jpeg">
+<div class="memory-text">
+<h3>❤️ Forever</h3>
+<p>A moment I want to keep forever.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.08 PM.jpeg">
+<div class="memory-text">
+<h3>✨ Another Memory</h3>
+<p>Another chapter of our story.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.08 PM (2).jpeg">
+<div class="memory-text">
+<h3>💞 Us</h3>
+<p>Just you and me.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.08 PM (1).jpeg">
+<div class="memory-text">
+<h3>🌹 Forever Moment</h3>
+<p>Some memories never fade.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="photo14.jpg">
+<div class="memory-text">
+<h3>💗 My Favourite</h3>
+<p>One of my favourite memories of us.</p>
+</div>
+</div>
+
+
+<div class="memory">
+<img src="image/WhatsApp Image 2026-09-08 at 6.30.07 PM (1).jpeg">
+<div class="memory-text">
+<h3>💍 Our Future</h3>
+<p>Maybe this is only the beginning.</p>
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- QUOTES -->
+
+<section id="quotes">
+
+<h2 class="title">
+Little Love Quotes 💕
+</h2>
+
+<p class="subtitle">
+Things I might never say enough...
+</p>
+
+
+<div class="quotes">
+
+<div class="quote">
+<span>❤️</span>
+<p>
+"You're my favourite notification,
+my favourite conversation,
+and my favourite person."
+</p>
+</div>
+
+
+<div class="quote">
+<span>🌹</span>
+<p>
+"I don't need a perfect life.
+I just want beautiful moments
+with you."
+</p>
+</div>
+
+
+<div class="quote">
+<span>✨</span>
+<p>
+"Some people become memories.
+You became my favourite chapter."
+</p>
+</div>
+
+
+<div class="quote">
+<span>🥰</span>
+<p>
+"If I had to choose again,
+I'd still choose you."
+</p>
+</div>
+
+
+<div class="quote">
+<span>💖</span>
+<p>
+"Your smile has a special place
+in my heart."
+</p>
+</div>
+
+
+<div class="quote">
+<span>💍</span>
+<p>
+"I don't just want another memory.
+I want a future with you."
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section>
+
+<h2 class="title">
+Our Little Timeline ⏳
+</h2>
+
+<p class="subtitle">
+From one moment to another...
+</p>
+
+<div class="timeline">
+
+<div class="event">
+<h3>🌱 The Beginning</h3>
+<p>
+The first chapter of something
+that became very special.
+</p>
+</div>
+
+
+<div class="event">
+<h3>😊 The Smiles</h3>
+<p>
+The conversations, jokes and little
+moments that made everything better.
+</p>
+</div>
+
+
+<div class="event">
+<h3>📸 The Memories</h3>
+<p>
+We started collecting moments
+that are now impossible to forget.
+</p>
+</div>
+
+
+<div class="event">
+<h3>❤️ Today</h3>
+<p>
+We are here, surrounded by all
+these beautiful memories.
+</p>
+</div>
+
+
+<div class="event">
+<h3>💍 Tomorrow</h3>
+<p>
+And maybe... there are thousands
+of beautiful memories still waiting for us.
+</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- LOVE LETTER -->
+
+<section id="letter">
+
+<h2 class="title">
+A Letter For You 💌
+</h2>
+
+<div class="letter">
+
+<h2>
+To The Person Who Makes Me Smile ❤️
+</h2>
+
+<p>
+Dear You,
+</p>
+
+<br>
+
+<p>
+I don't know if words can ever completely
+explain what you mean to me.
+</p>
+
+<br>
+
+<p>
+But when I look at these pictures,
+I don't just see photographs.
+I see moments.
+I see smiles.
+I see memories.
+I see us.
+</p>
+
+<br>
+
+<p>
+And honestly, my favourite thing isn't
+any single photograph.
+It's the fact that there are so many
+memories still waiting to be created.
+</p>
+
+<br>
+
+<p>
+So this little website is my way of saying
+something simple:
+</p>
+
+<br>
+
+<p style="text-align:center;font-size:28px;">
+<strong>
+I want more memories with you. ❤️
+</strong>
+</p>
+
+<br>
+
+<p>
+Always yours,
+<br>
+<strong>❤️</strong>
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROPOSAL -->
+
+<section class="final" id="proposal">
+
+<div class="final-content" id="question">
+
+<div class="final-heart">
+💖
+</div>
+
+<h1>
+One Last Question...
+</h1>
+
+<p>
+We've travelled through our memories.
+<br>
+We've looked at our story.
+<br><br>
+
+But there is one chapter I haven't written yet...
+</p>
+
+<br>
+
+<h1>
+Will You Be Mine Forever? 💍
+</h1>
+
+<button class="btn" onclick="yes()">
+YES ❤️
+</button>
+
+</div>
+
+
+<div class="final-content" id="answer">
+
+<div class="final-heart">
+💖
+</div>
+
+<h1>
+Yaaay! ❤️
+</h1>
+
+<p>
+Then let's make the next chapter
+our most beautiful one.
+</p>
+
+<br>
+
+<p style="font-size:30px;">
+Our Story Continues... ✨
+</p>
+
+</div>
+
+</section>
+
+
+<audio id="music" loop>
+<source src="music.mp3">
+</audio>
+
+
+<script>
+
+/* LOADING */
+
+window.onload=function(){
+
+setTimeout(function(){
+
+document.getElementById("loading").style.display="none";
+
+},1500);
+
+};
+
+
+/* MUSIC */
+
+document.body.addEventListener("click",function(){
+
+let music=document.getElementById("music");
+
+music.play().catch(()=>{});
+
+},{once:true});
+
+
+/* YES BUTTON */
+
+function yes(){
+
+document.getElementById("question").style.display="none";
+
+document.getElementById("answer").style.display="block";
+
+for(let i=0;i<60;i++){
+
+let heart=document.createElement("div");
+
+heart.className="floating-heart";
+
+heart.innerHTML=["❤️","💖","💕","💗","💓"][Math.floor(Math.random()*5)];
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+(15+Math.random()*35)+"px";
+
+heart.style.animationDuration=
+(4+Math.random()*5)+"s";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),9000);
+
+}
+
+}
+
+
+/* RANDOM HEARTS */
+
+setInterval(function(){
+
+let heart=document.createElement("div");
+
+heart.className="floating-heart";
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+(15+Math.random()*25)+"px";
+
+document.body.appendChild(heart);
+
+setTimeout(()=>heart.remove(),7000);
+
+},1200);
+
+</script>
+
+</body>
+</html>
